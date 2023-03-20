@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
 const app = express();
 
@@ -23,23 +23,39 @@ mongoose
   });
 
 const usersSchema = new mongoose.Schema({
-    email: String,
-    password: String
-})
+  email: String,
+  password: String,
+});
 
-const User = mongoose.model("User", usersSchema)
+const User = mongoose.model("User", usersSchema);
 
 app.get("/", (req, res) => {
-    res.render("home")
-})
+  res.render("home");
+});
 
 app.get("/register", (req, res) => {
-    res.render("register")
-})
+  res.render("register");
+});
+
+app.post("/register", (req, res) => {
+  const newUser = new User({
+    email: req.body.username,
+    password: req.body.password,
+  });
+
+  newUser
+    .save()
+    .then(() => {
+      res.render("secrets");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
 
 app.get("/login", (req, res) => {
-    res.render("login")
-})
+  res.render("login");
+});
 
 app.listen(3000, (req, res) => {
   console.log("Server is running on port 3000.");
