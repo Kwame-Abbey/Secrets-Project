@@ -5,3 +5,5 @@ This repository is just for the practice of authentication and security. The pra
 2. Level 2 involved encryption. In this level, the mongoose-encryption package was used to provide some encryption for the user's password generated. This level also provided some vulnerabilities hence the need for a more secure option.
 
 3. Hashing was tackled at level with the help of the md5 package. The password of the user then hashed safely but one disadvantage of this level of hashing wa show the md5 package genarates the same encrypted message fo r the same string of characters with makes hacking of users of same password very likely the moment one user's get  comprehended.
+
+4. This fourth level basically dealt with the main disadvantage of level 3 by introducing Salting in addition to the hashing done in level 3. Salting adds a randomly generated string of characters to the already generated hash in level 3 to make the user's password more difficult to crack.
