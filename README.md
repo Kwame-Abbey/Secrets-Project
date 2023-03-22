@@ -10,3 +10,5 @@ Here, a home page was rendered were a user can signup or login( if he had alread
 4. This fourth level basically dealt with the main disadvantage of level 3 by introducing Salting in addition to the hashing done in level 3. Salting adds a randomly generated string of characters to the already generated hash in level 3 to make the user's password more difficult to crack.
 
 5. The fifth level mainly involved the use of the passport, passport-local, passport-local-mongoose and express-session packages for security. This level was quite challenging but the degree of security achieved was quite the effort.
+
+6. The final level was implementing OAuth(Open Authorisation) 2.0 to the website. This is where the user tries to use a third party website such as google or facebook to login or signup to my secrets page. 
